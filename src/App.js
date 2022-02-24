@@ -13,12 +13,12 @@ class App extends React.Component{
       render(){
             initializeAnalytics();
             return(
-                  <div>
+                  <div className='bg-black'>
                         <div className=" hidden lg:block">
                               <Main />
                         </div>
-                        <div className="mobile-screen lg:hidden flex h-screen">
-                              <span className='m-auto'>Please use this website on your computer.</span>
+                        <div className="mobile-screen lg:hidden flex h-screen bg-gray-900">
+                              <span className='m-auto text-gray-300 font-bold text-3xl text-center '>Please use this website on your computer.</span>
                         </div>
                   </div>
                   

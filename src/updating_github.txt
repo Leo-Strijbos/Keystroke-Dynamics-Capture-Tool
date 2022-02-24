@@ -1,0 +1,5 @@
+git add .
+git rm --cached node_modules/.cache/gh-pages/https\!github.com\!Leo-Strijbos\!Find-Kanye.git
+
+git commit -m "commit name"
+git push origin main
