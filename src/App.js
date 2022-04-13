@@ -1,28 +1,55 @@
 import './App.css';
 import React from "react"
-import Main from "./main.js"
-import ReactGA from "react-ga"
-
-function initializeAnalytics(){
-      ReactGA.initialize("G-QFGQZKTV2D")
-      ReactGA.pageview("/MainPage")
-}
+import Authenticate from "./Pages/main.js"
+import TypePage from './Pages/typing';
+import Landing from './Pages/landing';
 
 class App extends React.Component{
+      constructor(props) {
+            super(props)
+
+            this.state = {
+                  ready: false,
+                  loggedIn : false,
+                  profile: "",
+            }
+
+            this.authHandler = this.authHandler.bind(this)
+            this.backHandler = this.backHandler.bind(this)
+            this.readyHandler = this.readyHandler.bind(this)
+      }
+
+      authHandler(name) {
+            this.setState({ loggedIn: true })
+            this.setState({ profile:name })
+      }
+
+      backHandler() {
+            this.setState({ loggedIn: false })
+            this.setState({ profile:"" })
+      }
+
+      readyHandler() {
+            this.setState({ ready: true })
+      }
       
       render(){
-            initializeAnalytics();
-            return(
-                  <div className='bg-black'>
-                        <div className=" hidden lg:block">
-                              <Main />
-                        </div>
-                        <div className="mobile-screen lg:hidden flex h-screen bg-gray-900">
-                              <span className='m-auto text-gray-300 font-bold text-3xl text-center '>Please use this website on your computer.</span>
-                        </div>
-                  </div>
+            if (this.state.loggedIn) {
+                  return(
+                        <TypePage profile={this.state.profile} handler={this.backHandler}/>
+                  )
                   
-            )
+            } else if (this.state.ready) {
+                  return(
+                        <Authenticate handler={this.authHandler}/>
+                  )
+                  
+            } else {
+                  return(
+                        <Landing handler={this.readyHandler}/>
+                  )
+            }
+            
       }
 }
 

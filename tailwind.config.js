@@ -6,11 +6,11 @@ module.exports = {
       fontFamily: {
         heading: ['Cabin']
       },
-      // backgroundImage: {
-      //   background: "url('/src/img/background.jpeg')",
-      //   kanye: "url('/src/img/kanye.png')",
-      //   beans:"url('/src/img/beans.jpeg')"
-      // }
+      backgroundImage: {
+        confetti: "url('/src/img/confetti.gif')",
+        // kanye: "url('/src/img/kanye.png')",
+        // beans:"url('/src/img/beans.jpeg')"
+      }
     },
   },
   variants: {
