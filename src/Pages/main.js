@@ -48,7 +48,7 @@ class Authenticate extends React.Component{
     }
 
     authenticate() {
-        var base = new Airtable({apiKey: 'keyZBa6Zue26Qd9BX'}).base('appwhIolXtHdjTzlL');
+        var base = new Airtable({apiKey: API_KEY}).base('appwhIolXtHdjTzlL');
 
         let name = this.state.name
 
@@ -73,7 +73,7 @@ class Authenticate extends React.Component{
 
     componentDidMount() {
         var Airtable = require('airtable');
-        var base = new Airtable({apiKey: 'keyZBa6Zue26Qd9BX'}).base('appwhIolXtHdjTzlL');
+        var base = new Airtable({apiKey: API_KEY}).base('appwhIolXtHdjTzlL');
         let options = this.state.options
 
         base('Main').select({
