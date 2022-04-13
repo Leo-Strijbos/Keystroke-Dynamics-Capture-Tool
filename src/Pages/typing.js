@@ -52,7 +52,7 @@ class TypePage extends React.Component{
         this.restart()
 
         
-        var base = new Airtable({apiKey: 'keyZBa6Zue26Qd9BX'}).base('appwhIolXtHdjTzlL');
+        var base = new Airtable({apiKey: API_KEY}).base('appwhIolXtHdjTzlL');
         let id = this.state.id
 
         console.log(update(this.state.profile, numDone+1, timings.toString(), id))
@@ -135,7 +135,7 @@ class TypePage extends React.Component{
 
     testTable() {
         var Airtable = require('airtable');
-        var base = new Airtable({apiKey: 'keyZBa6Zue26Qd9BX'}).base('appwhIolXtHdjTzlL');
+        var base = new Airtable({apiKey: API_KEY}).base('appwhIolXtHdjTzlL');
 
         base('Main').select({
             view: "Grid view"
