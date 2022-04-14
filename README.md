@@ -15,15 +15,15 @@ This website is an interface for collecting keystroke patterns, design with simp
 var base = new Airtable({apiKey: API_KEY}).base('TABLE_ID');
 ```
 * Find the API key and base ID inside Airtable, by clicking Help > API Documentation
-* In order to select a text, change the following inside typing.js
-⋅⋅⋅Choose the text inside the state, and NUM is 2 * number of chars in text
+* In order to select a text, change the following inside typing.js:
+* Choose the text inside the state, and NUM is 2 * number of chars in text
 ```javascript
 this.state = {
   text: YOUR_TEXT,
   keystroke: Array(NUM).fill(0),
 }
 ```
-⋅⋅⋅And also change NUM on line 34
+* And also change NUM on line 34
 ```javascript
 this.setState({ keystroke: Array(NUM).fill(0) })
 ```
