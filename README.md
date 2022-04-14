@@ -1,71 +1,41 @@
-# Getting Started with Create React App
+# Keystroke Dynamics Capture Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is keystroke dynamics?
 
-## Available Scripts
+Keystroke dynamics centers around the use of typing patterns as a biometric tool. Unlike passwords or biological biometrics, keystroke patterns cannot be emulated under duress, and thus may be a viable approach for authentication, instead of or on top of password-based authentication. 
 
-In the project directory, you can run:
+## What is this website, and how can I use it?
 
-### `yarn start`
+This website is an interface for collecting keystroke patterns, design with simplicity and ease-of-use in mind. In order to use it, there are several steps that need to take place:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Fork this repository and all of its contents
+* Create an airtable account, and set up an empty table for use
+* Inside main.js and typing.js, edit the airtable initialization lines
+```javascript
+var base = new Airtable({apiKey: API_KEY}).base('TABLE_ID');
+```
+* Find the API key and base ID inside Airtable, by clicking Help > API Documentation
+* In order to select a text, change the following inside typing.js
+⋅⋅⋅Choose the text inside the state, and NUM is 2 * number of chars in text
+```javascript
+this.state = {
+  text: YOUR_TEXT,
+  keystroke: Array(NUM).fill(0),
+}
+```
+⋅⋅⋅And also change NUM on line 34
+```javascript
+this.setState({ keystroke: Array(NUM).fill(0) })
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Customizing the aesthetics
 
-### `yarn test`
+This website was built with Tailwind CSS and React JS, so to change the UI, simply edit the class names of widgets on the page. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Credit
 
-### `yarn build`
+This code is free to use, and the copyright symbol may be removed from the landing page, but please appropriately credit the author in any academic work.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contacting the author
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# SigmaCode
+Feel free to get in touch with me, by emailing [me](mailto:leostersmail@gmail.com) or getting in touch on [discord.](https://www.discord.com/channels/@me/431452148425818122/)
